@@ -36,8 +36,8 @@
 //  |Caps+  |A ###  |R ###  |S ###  |T €€€  |D      |H ###  |N  ⇙   |E  ⇓   |I  ⇘   |O      |' "    |\  |   |
 //  | ++++  | Left  | Down  | Right | Back  | K_Lck | PgDn  | KP_1  | KP_2  | KP_3  | K_Ent |  '    |  :    |
 //  +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-//  |_ €€€  |Z €€€  |X ===  |C ===  |V ===  |B ***  |K      |M      |,  ⇕   |.      |/      |Spc    |Entr   |
-//  | Cust  | Undo  | Cut   | Copy  | Paste | *Bt1  |  ,    | KP_0  | KP_0  | KP_.  | KP_/  | Spc   | K_Ent |
+//  |_ €€€  |Z €€€  |X ===  |C ===  |B ***  | V === | K      |M      |,  ⇕   |.      |/      |Spc    |Entr   |
+//  | Cust  | Undo  | Cut   | Copy  | *Bt1  | Paste | ,    | KP_0  | KP_0  | KP_.  | KP_/  | Spc   | K_Ent |
 //  +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
 //
 //  TODO:
@@ -503,21 +503,22 @@ xkb_symbols "lv5" {
       Redirect(key=<AB03>,mods=Control,clearmods=LevelFive), Redirect(key=<AB03>,mods=Shift+Control,clearmods=LevelFive)], // Ctrl+C
 //                    Redirect(key=<COPY>)        , Redirect(key=<COPY>)          ] , // <COPY>(‡‡) (not working since Ub14.04?)
                  repeat=yes     };  // C
-    key <AB04> { symbols[Group1]=[Any       , Any       , Any       , Any       ,   // V
-                    XF86Paste                   , XF86Paste                     ,   // Paste(§§)
-                    XF86Paste                   , XF86Paste                     ] , // Paste(§§)
-                 actions[Group1]=[NoAction(), NoAction(), NoAction(), NoAction(),
-      Redirect(key=<AB04>,mods=Control,clearmods=LevelFive), Redirect(key=<AB04>,mods=Shift+Control,clearmods=LevelFive),  // Ctrl+V
-      Redirect(key=<AB04>,mods=Control,clearmods=LevelFive), Redirect(key=<AB04>,mods=Shift+Control,clearmods=LevelFive)], // Ctrl+V
-//                    Redirect(key=<PAST>)        , Redirect(key=<PAST>)          ] , // <PAST>(‡‡) (not working since Ub14.04?)
-                 repeat=yes     };  // V
-    key <AB05> { symbols[Group1]=[Any       , Any       , Any       , Any       ,   // B
+    key <AB04> { symbols[Group1]=[Any       , Any       , Any       , Any       ,   // B
                     Pointer_Button1             , Pointer_Button1               ,   // LBt(††)
                     Pointer_Button1             , Pointer_Button1               ] , // LBt
                  actions[Group1]=[NoAction(), NoAction(), NoAction(), NoAction(),
                     PtrBtn(button=1)            , PtrBtn(button=1)              ,   // PtrLBt
                     NoAction()                  , NoAction()                    ] ,
+                 repeat=yes     };  // V
+    key <AB05> { symbols[Group1]=[Any       , Any       , Any       , Any       ,   // V
+                    XF86Paste                   , XF86Paste                     ,   // Paste(§§)
+                    XF86Paste                   , XF86Paste                     ] , // Paste(§§)
+                 actions[Group1]=[NoAction(), NoAction(), NoAction(), NoAction(),
+      Redirect(key=<AB05>,mods=Control,clearmods=LevelFive), Redirect(key=<AB05>,mods=Shift+Control,clearmods=LevelFive),  // Ctrl+V
+      Redirect(key=<AB05>,mods=Control,clearmods=LevelFive), Redirect(key=<AB05>,mods=Shift+Control,clearmods=LevelFive)], // Ctrl+V
+//                    Redirect(key=<PAST>)        , Redirect(key=<PAST>)          ] , // <PAST>(‡‡) (not working since Ub14.04?)
                  repeat=yes     };  // B
+
     key <AB06> { symbols[Group1]=[Any       , Any       , Any       , Any       ,   // N
                     Pointer_Button2             , Pointer_Button2               ,   // MBt(††)
                     comma                       , semicolon                     ] , //  , ;
@@ -533,14 +534,14 @@ xkb_symbols "lv5" {
                     NoAction()                  , NoAction()                    ] ,
                  repeat=yes     };  // M
     key <AB08> { symbols[Group1]=[Any       , Any       , Any       , Any       ,   // , <
-                    Pointer_Left                , Pointer_Left                  ,   // PtrLe(††)
+                    questiondown                , questiondown                  ,   // PtrLe(††)
                     KP_0                        , U21D5                         ] , // KP_0   /   ↕ ⇕
                  actions[Group1]=[NoAction(), NoAction(), NoAction(), NoAction(),
                     MovePtr(x=-8,y=+0)          , MovePtr(x=-8,y=+0)            ,   // PtrLe(††)
                     NoAction()                  , NoAction()                    ] ,
                  repeat=yes     };  // , <
     key <AB09> { symbols[Group1]=[Any       , Any       , Any       , Any       ,   // . >
-                    Pointer_Right               , Pointer_Right                 ,   // PtrRi(††)
+                    question               , question                 ,   // PtrRi(††)
                     KP_Decimal                  , colon                         ] , // KP_. :
                  actions[Group1]=[NoAction(), NoAction(), NoAction(), NoAction(),
                     MovePtr(x=+8,y=+0)          , MovePtr(x=+8,y=+0)            ,   // PtrRi(††)
