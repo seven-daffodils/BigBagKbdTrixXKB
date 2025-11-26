@@ -286,13 +286,19 @@ xkb_symbols "cmk_ed_us" {
     include "level3(ralt_switch)"
     name[Group1]= "Spanish (Colemak[eD], unified symbols)";
 
+    key <AC01> {[    a, A, aacute, Aacute	]};
+    key <AC10> {[    o, O, oacute, Oacute	]};
+    key <AC08> {[    e, E, eacute, Eacute	]};
+    key <AD08> {[    u, U, uacute, Uacute	]};
+    key <AC09> {[    i, I, iacute, Iacute	]};
+
 //    key <AB06> { [             k,             K,            ccedilla,            Ccedilla ] }; // from <BKSL>
 //    key <AD12> { [     masculine,   ordfeminine,         bracketleft,           braceleft ] }; // from <TLDE>
 
-//    key <AD11> { [   bracketleft,     braceleft,          dead_acute,      dead_diaeresis ] }; // (latam <AD11>)
-//    key <AD12> { [  bracketright,    braceright,          dead_grave,     dead_circumflex ] };
-    key <AD11> { [   dead_acute, dead_diaeresis,         bracketleft,           braceleft ] }; // Sun <AC11>**
-    key <AD12> { [  dead_grave, dead_circumflex,        bracketright,          braceright ] }; // Sun <AD11>**
+    key <AD11> { [  bracketleft,     braceleft,          dead_acute,      dead_diaeresis  ] }; // (latam <AD11>)
+    key <AD12> { [  bracketright,    braceright,         dead_grave,      dead_circumflex ] };
+//  key <AD11> { [  dead_acute,      dead_diaeresis,     bracketleft,     braceleft  ] };  // Sun <AC11>**
+//  key <AD12> { [  dead_grave,      dead_circumflex,    bracketright,    braceright ] }; // Sun <AD11>**
     key <LSGT> { [        ntilde,        Ntilde,                  oe,                  OE ] }; // from <AC10>
 //  NOTE: For ordfeminine/masculine, use AltGr+o/O which should be an easy reach.
 //  NOTE: The es and latam layouts have been harmonized; this should not affect typing efficiency.
